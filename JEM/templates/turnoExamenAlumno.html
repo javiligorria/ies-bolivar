@@ -1,0 +1,72 @@
+﻿{% extends "privadoAlumno.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>{{ titulo1 }}</h2>
+<h2>{{ titulo2 }}</h2>
+<p>Tiempo límite de Inscripcion</p>
+<p>Desde: {{ turnoExamen.fecha_inicio }}</p>
+<p>Hasta: {{ turnoExamen.fecha_fin }}</p>
+
+<h3>PRIMER AÑO</h3>
+
+<table>
+	<tr>
+		<td scope="col">FECHA</td>
+		<td scope="col">HORA</td>
+		<td scope="col">ASIGNATURA</td>
+		<td scope="col">TRIBUNAL</td>
+	</tr>
+	{% for turno in list1 %}
+	<tr>
+		<td>{{ turno.fecha|date:"d/m/Y" }}</td>
+		<td>{{ turno.hora }}</td>
+		<td>{{ turno.materia }}</td>
+		<td>{% for profe in turno.tribunal.all %}{{ profe.profesor }}/{% endfor %}</td>				
+	</tr>
+	{% endfor %}
+</table>
+
+<h3>SEGUNDO AÑO</h3>
+<table>
+	<tr>
+		<td scope="col">FECHA</td>
+		<td scope="col">HORA</td>
+		<td scope="col">ASIGNATURA</td>
+		<td scope="col">TRIBUNAL</td>
+	</tr>
+	
+	{% for turno in list2 %}
+	<tr>
+		<td>{{ turno.fecha|date:"d/m/Y" }}</td>
+		<td>{{ turno.hora }}</td>
+		<td>{{ turno.materia }}</td>
+		<td>{% for profe in turno.tribunal.all %}{{ profe.profesor }}/{% endfor %}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<h3>TERCER AÑO</h3>
+<table>
+	<tr>
+		<td scope="col">FECHA</td>
+		<td scope="col">HORA</td>
+		<td scope="col">ASIGNATURA</td>
+		<td scope="col">TRIBUNAL</td>
+	</tr>
+	
+	{% for turno in list3 %}
+	<tr>
+		<td>{{ turno.fecha|date:"d/m/Y" }}</td>
+		<td>{{ turno.hora }}</td>
+		<td>{{ turno.materia }}</td>
+		<td>{% for profe in turno.tribunal.all %}{{ profe.profesor }}/{% endfor %}</td>
+	</tr>
+	{% endfor %}
+
+
+</table>
+
+{% endblock %}

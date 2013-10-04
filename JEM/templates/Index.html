@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>{% block title %}Anexo Simon Bolivar{% endblock %}</title>
+
+<link href="{{STATIC_URL}}css/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+    <h1 color="blue">
+    <img src="{{STATIC_URL}}img/logo 3 sb.png" width="260" height="135" /> <marquee><font face="univers" size="6" color="red"> INSTITUTO DE ENSEÑANZA SUPERIOR &quot;SIMÓN BOLIVAR&quot - ANEXO VILLA EL LIBERTADOR  </font></marquee> </h1>
+  </div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="/institucional">Institucional</a></li>
+      <li><a href="/carreras">Carreras</a></li>
+      <li><a href="/noticias">Noticias</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+      <li><a href="/ingresar">Autogestión de Usuarios</a></li>
+      <li><a href="#">Ingresantes</a></li>
+      <li><a href="#">Egresados</a></li>
+      <li><a href="#">Centro de estudiantes</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    {% block cuerpo %}  {% endblock %}
+    
+</div>
+  <div class="footer">
+    <img src="{{STATIC_URL}}img/JEM_logo.jpg" width="190" height="141" alt="logo" />
+    <p>DERECHOS RESERVADOS - &quot;JEM&quot; SISTEMAs DE GESTION WEB</p>
+	
+    <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block cuerpo %} 
+
+<link href="{{STATIC_URL}}css/formularios.css" rel="stylesheet" type="text/css" />
+
+<h2>Identificate como usuario:</h2>
+
+<form id="formulario"  method="post" action="">{% csrf_token %}
+	<table width="500"  align="center">{{formulario}}</table>
+	<p align="right"><input  type="submit"  value="Iniciar Sesion" /></p>
+ </form>
+{% endblock %}

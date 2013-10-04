@@ -1,0 +1,29 @@
+{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+<style type="text/css">
+    ul.errorlist {
+        margin: 0;
+        padding: 0;
+    }
+    .errorlist li {
+        background-color: red;
+        color: white;
+        display: block;
+        font-size: 10px;
+        margin: 0 0 3px;
+        padding: 4px 5px;
+    }
+</style>
+
+<form  method='post' action=''>{% csrf_token %} 
+	<table>{{formulario}}</table>
+	<table>{{formulario1}}</table>
+	<table>{{formulario2}}</table>
+	<p><input type='submit' value='Guardar'/></p>
+</form>
+
+
+
+{% endblock %}

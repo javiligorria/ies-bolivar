@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block title %}Carreras{% endblock %}
+{% block cuerpo %} 
+<link href="{{STATIC_URL}}css/formularios.css" rel="stylesheet" type="text/css" />
+
+{% for car in carrera %}
+	<h2><a href="/carrera/{{ car.nombre }}/">{{ car.nombre }}</a></h2>
+	{% endfor %}
+
+{% endblock %} 

@@ -1,0 +1,42 @@
+﻿{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2 >{{ titulo1 }}</h2>
+<h4>Carrera: {{ titulo2 }}</h4>
+<h4>Cátedra: {{ titulo3 }}</h4>
+<table>
+	<tr>
+		<td scope="col", rowspan="2">Nº</td>
+		<td scope="col", rowspan="2">Apellido y Nombres</td>
+		<td scope="col", rowspan="2">Nº de D.N.I</td>
+		<td scope="col", rowspan="2">Asist(%)</td>
+		<td scope="col", rowspan="2">Condición</td>
+		<td scope="col", colspan="2">Calificación</td>
+		<td scope="col", rowspan="2">Observaciones</td>
+	</tr>
+	<tr>
+		<td scope="col">Nº</td>
+		<td scope="col">Letra</td>
+	</tr>
+{% for mat in list %}
+	<tr>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ mat.alumno }}</td>
+		<td>{{ mat.alumno.dni }}</td>
+		<td>{{ mat.materia.libroaula.asistencia.presentes }}</td>
+		<td>{{ mat.condicion }}</td>
+		<td>{{ mat.nota }}</td>
+		<td>{{ mat.nota_letra }}</td>
+		<td>{{ mat.observaciones }}</td>
+	</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+{% endblock %}

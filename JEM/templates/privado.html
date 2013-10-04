@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block cuerpo %} 
+<div> 
+	<h2 align="center"><font color="red">Bienvenido "{{usuario.persona.apellido|upper}} {{ usuario.persona.nombre1}}"</font></h2>
+	<HR width=90% align="center">
+	
+	
+	
+	
+	
+	
+	
+	<HR width=90% align="center">
+	<p>la última vez que te vimos por aquí fue el {{usuario.last_login}}.</p>
+	<p>Eres miembro desde el {{usuario.date_joined}}</p>
+	</div>
+{% endblock %}

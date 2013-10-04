@@ -1,0 +1,37 @@
+{% extends "privadoProfesor.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2 >{{ titulo1 }}</h2>
+<h2 >{{ titulo2 }}</h2>
+
+<table>
+	<tr>
+		<td>Nº</td>
+		<td>Apellido y Nombres</td>
+		<td>Nº de D.N.I</td>
+		<td>Tipo de examen Parcial</td>
+		<td>Calificacion</td>
+		<td>Letras</td>
+		<td>Observaciones</td>
+	</tr>
+{% for parcial in list %}
+	<tr>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ Parcial.alumno }}</td>
+		<td>{{ Parcial.alumno.dni }}</td>
+		<td>{{ Parcial.tipo_examen_parcial }}</td>
+		<td>{{ Parcial.nota }}</td>
+		<td>{{ Parcial.nota_letra }}</td>
+		<td>{{ Parcial.observaciones }}</td>
+	</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+{% endblock %}

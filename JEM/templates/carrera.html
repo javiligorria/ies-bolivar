@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{% block title %}{{ carrera }}{% endblock %}
+
+
+{% block cuerpo %} 
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>{{ carrera }}</h2>
+
+
+<h3>PRIMER AÑO</h3>
+<center>
+<table>
+	<tr>
+		<td scope="col">ASIGNATURA</td>
+	</tr>
+	{% for mat in lista1 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>			
+	</tr>
+	{% endfor %}
+</table>
+</center>
+<h3>SEGUNDO AÑO</h3>
+<center>
+<table>
+	<tr>
+		<td scope="col">ASIGNATURA</td>
+	</tr>
+	{% for mat in lista2 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>			
+	</tr>
+	{% endfor %}
+</table>
+</center>
+<h3>TERCER AÑO</h3>
+<center>
+<table>
+	<tr>
+		<td scope="col">ASIGNATURA</td>
+	</tr>
+	{% for mat in lista3 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>			
+	</tr>
+	{% endfor %}
+</table>
+</center>
+
+
+
+{% endblock %}

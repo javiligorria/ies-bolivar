@@ -1,0 +1,149 @@
+﻿{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h3>PRIMER AÑO</h3>
+
+<table>
+	<tr>
+		<td scope="col", rowspan="2">ESPACIOS CURRICULARES</td>
+		<td scope="col", rowspan="2">CONDICION</td>
+		<td scope="col", rowspan="2">MES/AÑO</td>
+		<td scope="col", colspan="2">CALIFICACIONES</td>
+		<td scope="col", rowspan="2">ESTABLECIMIENTO</td>
+	</tr>
+	<tr>
+		<td scope="col">Nº</td>
+		<td scope="col">LETRA</td>
+	</tr>
+{% for mat in lista1 %}
+	<tr>
+		<td>{{ mat.materia }}</td>
+		<td>{{ mat.condicion }}</td>
+		{% if mat.fecha_aprobacion %}
+			<td>{{ mat.fecha_aprobacion.month }}/{{ mat.fecha_aprobacion.year }} </td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota %}
+			<td>{{ mat.nota }}</td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota_letra %}
+			<td>{{ mat.nota_letra }}</td>
+		{% else %}
+			<td>ADEUDA</td>
+		{% endif %}
+		<td>{{ establecimiento }}</td>
+	</tr>
+{% endfor %}
+{% for mat in lista11 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>
+		<td>---</td>
+		<td>--- </td>
+		<td>---</td>
+		<td>ADEUDA</td>
+		<td>---</td>
+	</tr>
+{% endfor %}
+</table>
+
+<h3>SEGUNDO AÑO</h3>
+<table>
+	<tr>
+		<td scope="col", rowspan="2">ESPACIOS CURRICULARES</td>
+		<td scope="col", rowspan="2">CONDICION</td>
+		<td scope="col", rowspan="2">MES/AÑO</td>
+		<td scope="col", colspan="2">CALIFICACIONES</td>
+		<td scope="col", rowspan="2">ESTABLECIMIENTO</td>
+	</tr>
+	<tr>
+		<td scope="col">Nº</td>
+		<td scope="col">LETRA</td>
+	</tr>
+{% for mat in lista2 %}
+	<tr>
+		<td>{{ mat.materia }}</td>
+		<td>{{ mat.condicion }}</td>
+		{% if mat.fecha_aprobacion %}
+			<td>{{ mat.fecha_aprobacion.month }}/{{ mat.fecha_aprobacion.year }} </td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota %}
+			<td>{{ mat.nota }}</td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota_letra %}
+			<td>{{ mat.nota_letra }}</td>
+		{% else %}
+			<td>ADEUDA</td>
+		{% endif %}
+		<td>{{ establecimiento }}</td>
+	</tr>
+{% endfor %}
+{% for mat in lista22 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>
+		<td>---</td>
+		<td>--- </td>
+		<td>---</td>
+		<td>ADEUDA</td>
+		<td>---</td>
+	</tr>
+{% endfor %}
+</table>
+
+<h3>TERCER AÑO</h3>
+<table>
+	<tr>
+		<td scope="col", rowspan="2">ESPACIOS CURRICULARES</td>
+		<td scope="col", rowspan="2">CONDICION</td>
+		<td scope="col", rowspan="2">MES/AÑO</td>
+		<td scope="col", colspan="2">CALIFICACIONES</td>
+		<td scope="col", rowspan="2">ESTABLECIMIENTO</td>
+	</tr>
+	<tr>
+		<td scope="col">Nº</td>
+		<td scope="col">LETRA</td>
+	</tr>
+{% for mat in lista3 %}
+	<tr>
+		<td>{{ mat.materia }}</td>
+		<td>{{ mat.condicion }}</td>
+		{% if mat.fecha_aprobacion %}
+			<td>{{ mat.fecha_aprobacion.month }}/{{ mat.fecha_aprobacion.year }} </td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota %}
+			<td>{{ mat.nota }}</td>
+		{% else %}
+				<td>---</td>
+		{% endif %}
+		{% if mat.nota_letra %}
+			<td>{{ mat.nota_letra }}</td>
+		{% else %}
+			<td>ADEUDA</td>
+		{% endif %}
+		<td>{{ establecimiento }}</td>
+	</tr>
+{% endfor %}
+{% for mat in lista33 %}
+	<tr>
+		<td>{{ mat.nombre }}</td>
+		<td>---</td>
+		<td>--- </td>
+		<td>---</td>
+		<td>ADEUDA</td>
+		<td>---</td>
+	</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

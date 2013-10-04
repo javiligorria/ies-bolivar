@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block title %}Noticias{% endblock %}
+{% block cuerpo %} 
+
+<link href="{{STATIC_URL}}css/formularios.css" rel="stylesheet" type="text/css" />
+
+{% for noticia in list %}
+	<h2>{{ noticia.titulo }}</h2>
+	{% if noticia.imagen %}
+		<img src="/media/{{ noticia.imagen }}" width="260" height="135" align= 'center'/>
+	{% endif %}
+	<p>{{ noticia.contenido }}</p>
+{% endfor %}
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>Ya Existe "{{ nombre }}"</h2>
+
+<a href="javascript:window.history.go(-1);"><input type='submit' value='Volver'/></a>
+
+
+{% endblock %}

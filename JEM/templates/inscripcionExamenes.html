@@ -1,0 +1,30 @@
+{% extends "privadoAlumno.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>{{ titulo1 }}</h2>
+<h2>Turno de Exámen Nro: {{ turnoExamen.numero }}</h2>
+<p>Tiempo límite de Inscripcion</p>
+<p>Desde: {{ turnoExamen.fecha_inicio }}</p>
+<p>Hasta: {{ turnoExamen.fecha_fin }}</p>
+
+<table>
+	<tr>
+		<td scope="col">FECHA</td>
+		<td scope="col">HORA</td>
+		<td scope="col">ASIGNATURA</td>
+		<td scope="col">TRIBUNAL</td>
+	</tr>
+	{% for turno in lista1 %}
+	<tr>
+		<td>{{ turno.fecha|date:"d/m/Y" }}</td>
+		<td>{{ turno.hora }}</td>
+		<td><a href="/inscripcionExamenFinal/{{ turno.materia }}/{{ turnoExamen.id }}/">{{ turno.materia }}</td>
+		<td>{% for profe in turno.tribunal.all %}{{ profe.profesor }}/{% endfor %}</td>				
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

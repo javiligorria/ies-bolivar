@@ -1,0 +1,40 @@
+{%extends 'index.html'%}
+{% block cuerpo %} 
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+
+<h3>Emails Utiles</h3>
+	<center><table>
+  <tr>
+    <td width="200">Area</td>
+    <td width="300">E-mail</td>
+  </tr>
+  <tr>
+    <td>Coordinador Tecnicatura en Informatica</td>
+    <td>trabajofanny@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Coordinador Tecnicatura en Enfermeria</td>
+    <td>enfermeria@gmail</td>
+  </tr>
+  <tr>
+    <td>Laboratorio</td>
+    <td>gabi@gmail.com</td>
+  </tr>
+</table></center>
+	
+	<h3>Ante cualquier duda </br>Ponte en contacto con nosotros.</h3>
+	
+	<form id='formulario' method='post' action=''>{% csrf_token%}
+	{{formulario.as_p}}
+	<p><input type='submit' value='Enviar'/></p>
+	</form>
+	
+	<h3>Como llegar.</h3>
+	
+	  <div id="como llegar"><iframe width="700" height="400" frameborder="0" scrolling="no" marginheight="0"  marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=&amp;daddr=-31.468771,-64.217621&amp;hl=es-419&amp;geocode=&amp;sll=-31.468615,-64.217475&amp;sspn=0.002361,0.003449&amp;mra=mift&amp;mrsp=1&amp;sz=18&amp;ie=UTF8&amp;t=m&amp;ll=-31.469045,-64.219122&amp;spn=0.010981,0.012875&amp;z=15&amp;output=embed"></iframe></div>
+
+{% endblock %}
+
+

@@ -1,0 +1,29 @@
+{% extends "privadoAlumno.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>{{ titulo1 }}</h2>
+<h2>{{ titulo2 }}</h2>
+
+
+<table>
+	<tr>
+		<td scope="col">FECHA</td>
+		<td scope="col">NOTA</td>
+		<td scope="col">NOTA(LETRAS)</td>
+		<td scope="col">OBSERVACIONES</td>
+	</tr>
+	{% for examen in list %}
+	<tr>
+		<td>{{ examen.fecha|date:"d/m/Y" }}</td>
+		<td>{{ examen.nota }}</td>
+		<td>{{ examen.nota_letra }}</td>
+		<td>{{ examen.observaciones }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+{% endblock %}

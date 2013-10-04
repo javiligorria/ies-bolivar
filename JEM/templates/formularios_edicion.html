@@ -1,0 +1,18 @@
+{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+
+<link href="{{STATIC_URL}}css/formularios.css" rel="stylesheet" type="text/css" />
+
+<h2 >{{ titulo }}</h2>
+
+<form  method='post' action=''>{% csrf_token %} 
+	<table width="500"  align="center">{{formulario1}}</table>
+	<table width="500"  align="center">{{formulario2}}</table>
+	<p align="right"><input type='submit' value='Guardar'/></p>
+</form>
+
+
+
+{% endblock %}

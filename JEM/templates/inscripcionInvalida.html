@@ -1,0 +1,12 @@
+{% extends "privadoAlumno.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2>Imposible inscribirte a "{{ materia }}"</h2>
+<h2>Ya estas inscripto</h2>
+<a href="javascript:window.history.go(-1);"><input type='submit' value='Seguir Inscribiendo'/></a>
+
+
+{% endblock %}

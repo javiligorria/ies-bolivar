@@ -1,0 +1,35 @@
+﻿{% extends "privadoCoordinador.html" %}
+
+{% block subcuerpo %}
+
+<link href="{{STATIC_URL}}css/tablas.css" rel="stylesheet" type="text/css" />
+
+<h2 >{{ titulo1 }}</h2>
+<h2 >{{ titulo2 }}</h2>
+
+<table>
+	<tr>
+		<td>Nº</td>
+		<td>Nº de D.N.I</td>
+		<td>Apellido y Nombres</td>
+		<td>Calificacion</td>
+		<td>Letras</td>
+		<td>Observaciones</td>
+	</tr>
+{% for coloquio in list %}
+	<tr>
+		<td>{{ forloop.counter }}</td>
+		<td>{{ coloquio.alumno.dni }}</td>
+		<td>{{ coloquio.alumno }}</td>
+		<td>{{ coloquio.nota }}</td>
+		<td>{{ coloquio.nota_letra }}</td>
+		<td>{{ coloquio.observaciones }}</td>
+	</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+{% endblock %}

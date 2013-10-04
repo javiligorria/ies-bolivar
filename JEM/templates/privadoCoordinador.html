@@ -1,0 +1,84 @@
+{% extends "index.html" %}
+{% block title %}Menu Coordinador{% endblock %}
+
+
+{% block cuerpo %} 
+
+<script src="{{STATIC_URL}}css/SpryMenuBar.js" type="text/javascript"></script>
+<link href="{{STATIC_URL}}css/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+
+<div> 
+	
+<ul id="MenuBar1" class="MenuBarHorizontal">
+  <li><a class="MenuBarItemSubmenu" href="#">Alumnos</a>
+    <ul>
+		<li><a href="/consultarAlumno">Consultar</a></li>
+		<li><a href="/registrarusuarioAlumno">Registrar</a></li>
+		<li><a href="/consultarLegajoAlumno">Modificar</a></li>
+		<li><a href="/registrarCuota">Registrar Pago de Cuota</a></li>
+		<li><a href="#">Certificado Exámen</a></li>
+		<li><a href="#">Certificado Alumno Regular</a></li>
+    </ul>
+  </li>
+  <li><a class="MenuBarItemSubmenu" href="#">Profesores</a>
+    <ul>
+		<li><a href="/consultarProfesor">Consultar</a></li>
+		<li><a href="/registrarusuarioProfesor">Registrar</a></li>
+		<li><a href="/consultarLegajoProfesor">Modificar</a></li>
+    </ul>
+  </li>
+  <li><a class="MenuBarItemSubmenu" href="#">Administración</a>
+    <ul>
+      <li><a class="MenuBarItemSubmenu" href="#">Consultar</a>
+        <ul>
+		  <li><a href="/consultaListadoFinales">Listado de Inscripciones a Exámenes</a></li>
+		  <li><a href="/consultaInscripcion">Listado de Inscripciones a Materias</a></li>
+		  <li><a href="/consultaTurnoExamen">Turno de Exámen</a></li>
+          <li><a href="/consultaLibroAula">Libro de Aula</a></li>
+		  <li><a href="/consultaAlumnos">Listado de Alumnos por Curso</a></li>
+		  <li><a href="/consultaColoquio">Acta de Alumnos a Coloquio</a></li>
+		  <li><a href="/consultaMatricula">Acta de Matrícula</a></li>
+		  <li><a href="/consultarAlumnoAnalitico">Analítico</a></li>
+        </ul>
+      </li>
+      <li><a class="MenuBarItemSubmenu" href="#">Crear</a>
+		<ul>
+			<li><a href="/crearPlanEstudio">Plan de Estudios</a></li>
+			<li><a href="/agregarmateria">Materia</a></li>
+			<li><a href="/crearTurnoExamen">Turno de Exámen</a></li>
+			<li><a href="/crearCarrera">Carrera</a></li>
+			<li><a href="/crearLibroAula">Libro de Aula</a></li>
+			<li><a href="/registrarusuarioCoordinador">Nuevo Coordinador</a></li>
+		</ul>
+	  </li>
+      <li><a class="MenuBarItemSubmenu" href="#">Sitio Web</a>
+		<ul>
+			<li><a class="MenuBarItemSubmenu" href="#">Inscripción Materias</a>
+				<ul>
+					<li><a href="#">Habilitar</a></li>
+					<li><a href="#">Deshabilitar</a></li>
+				</ul>
+			<li><a href="/editarNoticia">Publicar Noticias</a></li>
+			<li><a href="#">Enviar Mails</a></li>
+		</ul>
+	  </li>
+    </ul>
+  </li>
+  <li><a href="/cerrar">Cerrar Sesión</a></li>
+</ul>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+
+	
+
+<div  width="765px"; height="1270px";>
+    {% block subcuerpo %}<center><img src="{{STATIC_URL}}img/coordinador.png" width="400" height="400" /></center>  {% endblock %}
+    
+</div>
+
+
+	
+	
+</div>
+{% endblock %}
